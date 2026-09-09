@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiomedEstética | Sorteador de Estudos & Simulados</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="app-container">
+        <!-- Cabeçalho Estético -->
+        <header class="header">
+            <span class="badge">✨ Estudos em Biomedicina Estética</span>
+            <h1>Biomed Estética</h1>
+            <p>Sorteie um tema de estudo para o vestibular e teste seus conhecimentos com simulados práticos.</p>
+        </header>
+
+        <!-- Botão Principal -->
+        <button id="draw-btn" class="primary-btn">🌸 Sortear Conteúdo de Estética</button>
+
+        <!-- Cartão do Conteúdo Sorteado -->
+        <section id="study-card" class="card hidden">
+            <div class="card-header">
+                <span id="subject-tag" class="tag">Especialidade</span>
+                <span id="subtopic-tag" class="subtag">Subtópico</span>
+            </div>
+            
+            <h2 id="topic-title">Título do Tema</h2>
+
+            <!-- Bloco de Resumo do Tema -->
+            <div class="summary-box">
+                <h3>📌 Resumo Teórico do Tema</h3>
+                <p id="topic-summary">Conteúdo resumido do tema vai aparecer aqui...</p>
+            </div>
+
+            <!-- Área do Simulado -->
+            <div id="quiz-section" class="quiz-container">
+                <hr class="divider">
+                <div class="quiz-header">
+                    <h3>✍️ Simulado de Fixação</h3>
+                </div>
+                
+                <p id="quiz-question" class="question-text">Pergunta do simulado...</p>
+
+                <div id="options-container" class="options-grid">
+                    <!-- Opções inseridas dinamicamente pelo JS -->
+                </div>
+
+                <div id="feedback" class="feedback-box hidden"></div>
+            </div>
+        </section>
+
+        <!-- Rodapé -->
+        <footer class="footer">
+            <p>💎 "A estética fundamentada na ciência transforma vidas." Bons estudos!</p>
+        </footer>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

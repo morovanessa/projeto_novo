@@ -1,0 +1,265 @@
+:root {
+    /* Paleta Estética & Minimalista (Elegante) */
+    --bg-color: #FAF6F0;           /* Cream/Nude suave */
+    --card-bg: #FFFFFF;           /* Branco puro para contraste */
+    --card-border: #E8DFD8;       /* Borda nude sutil */
+    --text-primary: #332C2B;      /* Marrom café bem escuro (mais elegante que preto) */
+    --text-secondary: #7A6F6B;    /* Marrom acinzentado */
+    --accent: #C88A8A;            /* Rosa Rose Gold / Seco */
+    --accent-hover: #B57474;
+    --accent-light: #F8EFEF;      /* Fundo rosa bem suave */
+    --gold: #D4A373;              /* Dourado delicado */
+    --success: #2A9D8F;           /* Verde sutil */
+    --danger: #E76F51;            /* Terracota/Red */
+    
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    background-image: radial-gradient(#E8DFD8 0.8px, transparent 0.8px);
+    background-size: 24px 24px; /* Textura de bolinhas sutis ao fundo */
+}
+
+.app-container {
+    width: 100%;
+    max-width: 680px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+}
+
+.badge {
+    background-color: var(--accent-light);
+    color: var(--accent);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 12px;
+    border: 1px solid rgba(200, 138, 138, 0.3);
+    letter-spacing: 0.5px;
+}
+
+.header h1 {
+    font-family: var(--font-serif);
+    font-size: 34px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.header p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* Botão de Ação Princial */
+.primary-btn {
+    background: linear-gradient(135deg, var(--accent) 0%, #B87A7A 100%);
+    color: #FFFFFF;
+    border: none;
+    padding: 18px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(200, 138, 138, 0.25);
+}
+
+.primary-btn:hover {
+    background: linear-gradient(135deg, var(--accent-hover) 0%, #A66868 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(200, 138, 138, 0.35);
+}
+
+.primary-btn:active {
+    transform: translateY(0);
+}
+
+/* Cartão do Estudo */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 15px 35px rgba(51, 44, 43, 0.05);
+    animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card.hidden {
+    display: none;
+}
+
+.card-header {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.tag {
+    background-color: var(--accent);
+    color: #FFFFFF;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.subtag {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#topic-title {
+    font-family: var(--font-serif);
+    font-size: 26px;
+    color: var(--text-primary);
+    margin-bottom: 18px;
+}
+
+/* Caixa de Resumo Teórico */
+.summary-box {
+    background-color: var(--accent-light);
+    border-left: 3px solid var(--accent);
+    padding: 18px;
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 24px;
+}
+
+.summary-box h3 {
+    font-size: 14px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.summary-box p {
+    color: var(--text-primary);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: var(--card-border);
+    margin: 24px 0;
+}
+
+/* Área do Quiz */
+.quiz-header h3 {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.question-text {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    color: var(--text-primary);
+}
+
+.options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option-btn {
+    background-color: #FAFAFA;
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    padding: 14px 18px;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 14px;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.option-btn:hover:not(:disabled) {
+    border-color: var(--accent);
+    background-color: var(--accent-light);
+}
+
+.option-btn:disabled {
+    cursor: not-allowed;
+}
+
+.option-btn.correct {
+    background-color: rgba(42, 157, 143, 0.1) !important;
+    border-color: var(--success) !important;
+    color: var(--success) !important;
+    font-weight: 600;
+}
+
+.option-btn.wrong {
+    background-color: rgba(231, 111, 81, 0.1) !important;
+    border-color: var(--danger) !important;
+    color: var(--danger) !important;
+}
+
+.feedback-box {
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.feedback-box.correct {
+    background-color: rgba(42, 157, 143, 0.08);
+    border: 1px solid var(--success);
+    color: #1b635a;
+}
+
+.feedback-box.wrong {
+    background-color: rgba(231, 111, 81, 0.08);
+    border: 1px solid var(--danger);
+    color: #a83d25;
+}
+
+.footer {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-style: italic;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
