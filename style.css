@@ -1,265 +1,333 @@
+/* --- Variáveis de Design --- */
 :root {
-    /* Paleta Estética & Minimalista (Elegante) */
-    --bg-color: #FAF6F0;           /* Cream/Nude suave */
-    --card-bg: #FFFFFF;           /* Branco puro para contraste */
-    --card-border: #E8DFD8;       /* Borda nude sutil */
-    --text-primary: #332C2B;      /* Marrom café bem escuro (mais elegante que preto) */
-    --text-secondary: #7A6F6B;    /* Marrom acinzentado */
-    --accent: #C88A8A;            /* Rosa Rose Gold / Seco */
-    --accent-hover: #B57474;
-    --accent-light: #F8EFEF;      /* Fundo rosa bem suave */
-    --gold: #D4A373;              /* Dourado delicado */
-    --success: #2A9D8F;           /* Verde sutil */
-    --danger: #E76F51;            /* Terracota/Red */
-    
-    --font-serif: 'Playfair Display', Georgia, serif;
-    --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    --bg-dark: #0f172a;
+    --card-bg: #1e293b;
+    --primary: #0ea5e9;
+    --primary-hover: #0284c7;
+    --accent: #10b981;
+    --accent-hover: #059669;
+    --gold: #f59e0b;
+    --text-light: #f8fafc;
+    --text-muted: #94a3b8;
+    --border: #334155;
+    --radius: 12px;
 }
 
+/* --- Resets Globais --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-primary);
-    font-family: var(--font-sans);
-    min-height: 100vh;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* --- Layout e Navegação --- */
+.navbar {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 30px 20px;
-    background-image: radial-gradient(#E8DFD8 0.8px, transparent 0.8px);
-    background-size: 24px 24px; /* Textura de bolinhas sutis ao fundo */
+    padding: 1.2rem 2rem;
+    background-color: rgba(30, 41, 59, 0.95);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
 }
 
-.app-container {
-    width: 100%;
-    max-width: 680px;
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.navbar ul {
     display: flex;
-    flex-direction: column;
-    gap: 24px;
+    list-style: none;
+    gap: 1.5rem;
 }
 
-/* Header */
-.header {
+.navbar a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--primary);
+}
+
+/* --- Hero Section --- */
+.hero {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: linear-gradient(180deg, rgba(14, 165, 233, 0.1) 0%, rgba(15, 23, 42, 1) 100%);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+/* --- Botões e Componentes --- */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary { background-color: var(--primary); color: #fff; }
+.btn-primary:hover { background-color: var(--primary-hover); }
+
+.btn-accent { background-color: var(--accent); color: #fff; }
+.btn-accent:hover { background-color: var(--accent-hover); }
+
+.btn-secondary { background-color: var(--gold); color: #fff; }
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-light);
+}
+.btn-outline:hover { background-color: var(--border); }
+
+.btn-large { font-size: 1.2rem; padding: 1rem 2rem; }
+
+/* --- Container e Cards --- */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border);
+}
+
+.card h2 {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.text-accent { color: var(--accent); }
+
+/* --- Sorteador --- */
+.sorter-box {
     text-align: center;
 }
 
-.badge {
-    background-color: var(--accent-light);
-    color: var(--accent);
-    padding: 6px 16px;
-    border-radius: 30px;
-    font-size: 13px;
-    font-weight: 600;
-    display: inline-block;
-    margin-bottom: 12px;
-    border: 1px solid rgba(200, 138, 138, 0.3);
-    letter-spacing: 0.5px;
+.draw-result {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background-color: rgba(15, 23, 42, 0.6);
+    border-radius: var(--radius);
+    border-left: 4px solid var(--accent);
+    text-align: left;
 }
 
-.header h1 {
-    font-family: var(--font-serif);
-    font-size: 34px;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 8px;
-    letter-spacing: -0.5px;
-}
-
-.header p {
-    color: var(--text-secondary);
-    font-size: 15px;
-    line-height: 1.5;
-}
-
-/* Botão de Ação Princial */
-.primary-btn {
-    background: linear-gradient(135deg, var(--accent) 0%, #B87A7A 100%);
-    color: #FFFFFF;
-    border: none;
-    padding: 18px;
-    border-radius: 14px;
-    font-size: 16px;
-    font-weight: 600;
-    font-family: var(--font-sans);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(200, 138, 138, 0.25);
-}
-
-.primary-btn:hover {
-    background: linear-gradient(135deg, var(--accent-hover) 0%, #A66868 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(200, 138, 138, 0.35);
-}
-
-.primary-btn:active {
-    transform: translateY(0);
-}
-
-/* Cartão do Estudo */
-.card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 20px;
-    padding: 32px;
-    box-shadow: 0 15px 35px rgba(51, 44, 43, 0.05);
-    animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.card.hidden {
-    display: none;
-}
-
-.card-header {
+.topic-meta {
+    margin-top: 1rem;
     display: flex;
-    gap: 10px;
-    align-items: center;
-    margin-bottom: 14px;
+    gap: 0.5rem;
 }
 
 .tag {
-    background-color: var(--accent);
-    color: #FFFFFF;
-    padding: 4px 12px;
+    background-color: var(--primary);
+    color: #fff;
+    padding: 0.25rem 0.75rem;
     border-radius: 20px;
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-}
-
-.subtag {
-    color: var(--gold);
-    font-size: 13px;
+    font-size: 0.85rem;
     font-weight: 600;
 }
 
-#topic-title {
-    font-family: var(--font-serif);
-    font-size: 26px;
-    color: var(--text-primary);
-    margin-bottom: 18px;
-}
-
-/* Caixa de Resumo Teórico */
-.summary-box {
-    background-color: var(--accent-light);
-    border-left: 3px solid var(--accent);
-    padding: 18px;
-    border-radius: 0 12px 12px 0;
-    margin-bottom: 24px;
-}
-
-.summary-box h3 {
-    font-size: 14px;
+.tag-outline {
+    background-color: transparent;
+    border: 1px solid var(--accent);
     color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 6px;
 }
 
-.summary-box p {
-    color: var(--text-primary);
-    font-size: 14px;
-    line-height: 1.6;
+.hidden { display: none; }
+
+/* --- Simulado / Quiz --- */
+.quiz-card {
+    background-color: rgba(15, 23, 42, 0.6);
+    padding: 1.5rem;
+    border-radius: var(--radius);
 }
 
-.divider {
-    border: 0;
-    height: 1px;
-    background: var(--card-border);
-    margin: 24px 0;
-}
-
-/* Área do Quiz */
-.quiz-header h3 {
-    font-family: var(--font-serif);
-    font-size: 18px;
-    margin-bottom: 12px;
-    color: var(--text-primary);
-}
-
-.question-text {
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 18px;
-    color: var(--text-primary);
-}
-
-.options-grid {
+.options-container {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 0.75rem;
+    margin-top: 1rem;
 }
 
 .option-btn {
-    background-color: #FAFAFA;
-    border: 1px solid var(--card-border);
-    color: var(--text-primary);
-    padding: 14px 18px;
-    border-radius: 10px;
     text-align: left;
-    font-size: 14px;
-    font-family: var(--font-sans);
+    padding: 1rem;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text-light);
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
-.option-btn:hover:not(:disabled) {
-    border-color: var(--accent);
-    background-color: var(--accent-light);
+.option-btn:hover {
+    border-color: var(--primary);
 }
 
-.option-btn:disabled {
-    cursor: not-allowed;
+.option-btn.correct { background-color: rgba(16, 185, 129, 0.2); border-color: var(--accent); }
+.option-btn.wrong { background-color: rgba(239, 68, 68, 0.2); border-color: #ef4444; }
+
+.explanation {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: rgba(14, 165, 233, 0.1);
+    border-radius: var(--radius);
+    color: var(--text-light);
 }
 
-.option-btn.correct {
-    background-color: rgba(42, 157, 143, 0.1) !important;
-    border-color: var(--success) !important;
-    color: var(--success) !important;
-    font-weight: 600;
+/* --- Pomodoro --- */
+.pomodoro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
 }
 
-.option-btn.wrong {
-    background-color: rgba(231, 111, 81, 0.1) !important;
-    border-color: var(--danger) !important;
-    color: var(--danger) !important;
-}
-
-.feedback-box {
-    margin-top: 20px;
-    padding: 16px;
-    border-radius: 10px;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-.feedback-box.correct {
-    background-color: rgba(42, 157, 143, 0.08);
-    border: 1px solid var(--success);
-    color: #1b635a;
-}
-
-.feedback-box.wrong {
-    background-color: rgba(231, 111, 81, 0.08);
-    border: 1px solid var(--danger);
-    color: #a83d25;
-}
-
-.footer {
+.timer-display {
     text-align: center;
-    color: var(--text-secondary);
-    font-size: 13px;
-    font-style: italic;
+    background-color: rgba(15, 23, 42, 0.6);
+    padding: 2rem;
+    border-radius: var(--radius);
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
+.time {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+/* --- Flashcards --- */
+.flashcard-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.flashcard {
+    perspective: 1000px;
+    height: 200px;
+    cursor: pointer;
+}
+
+.flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flashcard.flipped .flashcard-inner {
+    transform: rotateY(180deg);
+}
+
+.flashcard-front, .flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    background-color: rgba(117, 21, 101, 0.8);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flashcard-back {
+    transform: rotateY(180deg);
+    background-color: var(--card-bg);
+    border-color: var(--accent);
+}
+
+.hint {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* --- Checklist --- */
+.checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.checklist label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: rgba(15, 23, 42, 0.4);
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+.checklist input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    margin-top: 2rem;
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    .navbar { flex-direction: column; gap: 1rem; }
+    .pomodoro-grid { grid-template-columns: 1fr; }
 }

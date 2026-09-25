@@ -1,162 +1,180 @@
-// Banco de dados focado em Biomedicina Estética e Vestibular Integrado
-const bancoBiomedicinaEstetica = [
+// --- Banco de Dados de Temas (Sorteador) ---
+const topicsDB = [
     {
-        especialidade: "Anatomia Humana",
-        subtopico: "Histologia da Pele",
-        titulo: "Camadas da Epiderme e Derme",
-        resumo: "A epiderme é um epitélio estratificado pavimentoso queratinizado (composto pelas camadas basal, espinhosa, granulosa, lúcida e córnea). Abaixo dela está a derme, rica em fibroblastos responsáveis pela síntese de colágeno e elastina, fundamentais para a firmeza e sustentação cutânea.",
-        questao: "Qual é a célula predominante na derme responsável pela produção das fibras de colágeno e elastina?",
-        opcoes: [
-            "Queratinócito",
-            "Fibroblasto",
-            "Melanócito",
-            "Célula de Langerhans"
-        ],
-        correta: 1,
-        explicacao: "Os fibroblastos são as células chave do tecido conjuntivo dermal encarregadas da síntese do colágeno, elastina e ácido hialurônico endógeno."
+        title: "Anatomia Facial e Camadas Teciduais",
+        desc: "Estudo detalhado das 5 camadas faciais (Pele, Subcutâneo, SMAS, Espaços de Retenção e Periósteo) com foco na aplicação segura de injetáveis.",
+        area: "Anatomia Aplicada",
+        questions: "Frequente em 85% das provas"
     },
     {
-        especialidade: "Injetáveis e Preenchedores",
-        subtopico: "Bioquímica dos Biomateriais",
-        titulo: "Ácido Hialurônico e Reticulação",
-        resumo: "O Ácido Hialurônico é um glicosaminoglicano com alta capacidade de retenção de água. Na estética, o processo de reticulação (cross-linking com BDDE) altera sua estrutura química para torná-lo mais resistente à degradação enzimática da hialuronidase, prolongando a duração no tecido.",
-        questao: "Em vestibulares e provas de bioquímica, o ácido hialurônico é classificado como qual tipo de macromolécula?",
-        opcoes: [
-            "Proteína Fibrosa",
-            "Lipídio Complexo",
-            "Glicosaminoglicano (Carboidrato)",
-            "Ácido Nucleico"
-        ],
-        correta: 2,
-        explicacao: "O ácido hialurônico é um polissacarídeo não sulfatado pertencente à classe dos glicosaminoglicanos (carboidratos complexos)."
+        title: "Toxina Botulínica: Mecanismos e Diluição",
+        desc: "Ação da toxina no bloqueio da liberação de acetilcolina na junção neuromuscular via clivagem das proteínas SNARE.",
+        area: "Farmacologia",
+        questions: "Frequente em 92% das provas"
     },
     {
-        especialidade: "Dermatofuncional",
-        subtopico: "Farmacologia Cutânea",
-        titulo: "Peelings Químicos (AHA e BHA)",
-        resumo: "Os Alfa-hidroxiácidos (como o ácido glicólico e lático) são hidrossolúveis e atuam diminuindo a coesão dos corneócitos na camada córnea. Já os Beta-hidroxiácidos (como o ácido salicílico) são lipossolúveis, permitindo penetrar nos poros e folículos pilossebáceos, sendo ideais para peles acneicas.",
-        questao: "O ácido salicílico é muito utilizado em tratamentos de acne por ser um Beta-hidroxiácido com a seguinte propriedade:",
-        opcoes: [
-            "Apenas Ação Hidratante de Superfície",
-            "Lipossolubilidade (afinidade por óleos)",
-            "Ação Exclusivamente Despigmentante",
-            "Formação de Pontes de Dissulfeto"
-        ],
-        correta: 1,
-        explicacao: "Sua lipossolubilidade permite que o ácido salicílico penetre o sebo nos poros, desobstruindo-os e promovendo esfoliação interna."
+        title: "Preenchedores Dérmicos e Reologia",
+        desc: "Comportamento do Ácido Hialurônico, retrochoque, G' (elasticidade), viscoelasticidade e manejo de intercorrências com Hialuronidase.",
+        area: "Cosmetologia / Injetáveis",
+        questions: "Frequente em 78% das provas"
     },
     {
-        especialidade: "Aparelhos Estéticos",
-        subtopico: "Física Aplicada à Estética",
-        titulo: "Laser e Fototermólise Seletiva",
-        resumo: "A fototermólise seletiva é a capacidade de destruir um alvo específico (cromóforo, como a melanina ou hemoglobina) através da luz/calor sem danificar os tecidos adjacentes. O comprimento de onda e a duração do pulso são ajustados de acordo com a profundidade do cromóforo.",
-        questao: "No tratamento de remoção de manchas vasculares (vasinhos), qual substância atua como o cromóforo-alvo do laser?",
-        opcoes: [
-            "Queratina",
-            "Melanina",
-            "Hemoglobina",
-            "Colágeno"
-        ],
-        correta: 2,
-        explicacao: "A hemoglobina presente nos vasos sanguíneos absorve o comprimento de onda do laser vascular, gerando calor e coagulando o vaso."
+        title: "Bioestimuladores de Colágeno",
+        desc: "Mecanismo de indução inflamatória subclínica do PLLA (Ácido Poli-L-Láctico) e Hidroxiapatita de Cálcio para neocolagênese.",
+        area: "Biotecnologia",
+        questions: "Frequente em 70% das provas"
     },
     {
-        especialidade: "Microbiologia & Biossegurança",
-        subtopico: "Biossegurança em Clínicas",
-        titulo: "Esterilização e Assepsia Cutânea",
-        resumo: "Procedimentos minimamente invasivos exigem rigorosa assepsia local com clorexidina ou álcool 70% e esterilização de materiais reutilizáveis em autoclave (calor úmido sob pressão), eliminando todas as formas vegetativas e esporos bacterianos.",
-        questao: "O equipamento padrão utilizado em clínicas biomédicas para esterilização por meio de calor úmido sob pressão é o(a):",
-        opcoes: [
-            "Estufa de Convecção",
-            "Autoclave",
-            "Câmara UV-C",
-            "Ultrassom de Limpeza"
-        ],
-        correta: 1,
-        explicacao: "A autoclave utiliza vapor de água sob alta pressão e temperatura, garantindo a eliminação completa de micro-organismos e esporos."
-    },
-    {
-        especialidade: "Imunologia Cutânea",
-        subtopico: "Processos Inflamatórios",
-        titulo: "Regeneração Tecidual e Cicatrização",
-        resumo: "Muitos procedimentos estéticos (como o microagulhamento) funcionam induzindo uma lesão controlada na pele. Isso desencadeia a cascata inflamatória: liberação de fatores de crescimento, migração de fibroblastos e neocolagênese (formação de novo colágeno).",
-        questao: "Qual das seguintes fases da cicatrização caracteriza-se pelo pico de síntese e remodelação de colágeno?",
-        opcoes: [
-            "Fase Hemostática",
-            "Fase de Maturação / Remodelação",
-            "Fase de Necrose",
-            "Fase de Diapedese"
-        ],
-        correta: 1,
-        explicacao: "A fase de maturação é a etapa final da cicatrização, onde o colágeno tipo III é reorganizado e substituído por colágeno tipo I."
+        title: "Histologia da Pele e Cicatrização",
+        desc: "Composição celular da epiderme (queratinócitos, melanócitos) e turnover celular aplicados a Peelings Químicos.",
+        area: "Histologia",
+        questions: "Frequente em 88% das provas"
     }
 ];
 
-// Seleção de elementos da interface
-const drawBtn = document.getElementById('draw-btn');
-const studyCard = document.getElementById('study-card');
-const subjectTag = document.getElementById('subject-tag');
-const subtopicTag = document.getElementById('subtopic-tag');
-const topicTitle = document.getElementById('topic-title');
-const topicSummary = document.getElementById('topic-summary');
-const quizQuestion = document.getElementById('quiz-question');
-const optionsContainer = document.getElementById('options-container');
-const feedbackEl = document.getElementById('feedback');
+// --- Banco de Dados do Simulado ---
+const quizQuestions = [
+    {
+        question: "Qual o principal mecanismo de ação da Toxina Botulínica Tipo A na placa motora?",
+        options: [
+            "Inibição da síntese de colágeno pelo fibroblasto.",
+            "Clivagem da proteína SNAP-25, impedindo a exocitose de acetilcolina.",
+            "Bloqueio reversível dos canais de sódio nos axônios periféricos.",
+            "Destruição permanente dos receptores pós-sinápticos."
+        ],
+        correct: 1,
+        explanation: "A Toxina Botulínica entra no neurônio motor e cliva a proteína SNAP-25 (do complexo SNARE), bloqueando a liberação de acetilcolina."
+    },
+    {
+        question: "Em caso de oclusão vascular iminente por preenchedor de Ácido Hialurônico, qual a conduta imediata?",
+        options: [
+            "Aplicação de compressas frias e compressão local.",
+            "Injeção imediata da enzima Hialuronidase na área afetada.",
+            "Aplicação de toxina botulínica para relaxar o vaso sanguíneo.",
+            "Prescrição exclusiva de corticoide via oral por 5 dias."
+        ],
+        correct: 1,
+        explanation: "O protocolo de emergência vascular exige o uso imediato e em altas doses de Hialuronidase para degradação do gel e descompressão vascular."
+    }
+];
 
-// Função de Sorteio
-function sortearTema() {
-    const indiceSorteado = Math.floor(Math.random() * bancoBiomedicinaEstetica.length);
-    const item = bancoBiomedicinaEstetica[indiceSorteado];
+// --- Lógica do Sorteador ---
+document.getElementById('draw-btn').addEventListener('click', function() {
+    const randomIndex = Math.floor(Math.random() * topicsDB.length);
+    const selectedTopic = topicsDB[randomIndex];
 
-    // Preenche as informações
-    subjectTag.textContent = item.especialidade;
-    subtopicTag.textContent = item.subtopico;
-    topicTitle.textContent = item.titulo;
-    topicSummary.textContent = item.resumo;
-    quizQuestion.textContent = item.questao;
+    document.getElementById('topic-title').innerText = selectedTopic.title;
+    document.getElementById('topic-desc').innerText = selectedTopic.desc;
+    document.getElementById('topic-tag').innerText = selectedTopic.area;
+    document.getElementById('topic-questions').innerText = selectedTopic.questions;
 
-    // Reseta o simulado
+    document.getElementById('draw-result').classList.remove('hidden');
+});
+
+// --- Lógica do Simulado (Quiz) ---
+let currentQuestionIndex = 0;
+
+function loadQuestion() {
+    const q = quizQuestions[currentQuestionIndex];
+    document.getElementById('quiz-progress').innerText = `Questão ${currentQuestionIndex + 1} de ${quizQuestions.length}`;
+    document.getElementById('question-text').innerText = q.question;
+    
+    const optionsContainer = document.getElementById('options-container');
     optionsContainer.innerHTML = '';
-    feedbackEl.className = 'feedback-box hidden';
-    feedbackEl.textContent = '';
+    
+    document.getElementById('explanation').classList.add('hidden');
+    document.getElementById('next-q-btn').classList.add('hidden');
 
-    // Gera os botões das alternativas
-    item.opcoes.forEach((opcaoText, index) => {
-        const button = document.createElement('button');
-        button.classList.add('option-btn');
-        button.textContent = `${String.fromCharCode(65 + index)}) ${opcaoText}`;
-        button.onclick = () => verificarResposta(index, item.correta, item.explicacao);
-        optionsContainer.appendChild(button);
+    q.options.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.innerText = opt;
+        btn.onclick = () => selectOption(idx, q.correct, q.explanation);
+        optionsContainer.appendChild(btn);
     });
-
-    // Exibe o cartão na tela
-    studyCard.classList.remove('hidden');
 }
 
-// Função de validação de resposta
-function verificarResposta(opcaoEscolhida, opcaoCorreta, explicacao) {
-    const botoes = optionsContainer.querySelectorAll('.option-btn');
-
-    botoes.forEach((btn, index) => {
+function selectOption(selectedIndex, correctIndex, expText) {
+    const buttons = document.querySelectorAll('.option-btn');
+    buttons.forEach((btn, idx) => {
         btn.disabled = true;
-        
-        if (index === opcaoCorreta) {
-            btn.classList.add('correct');
-        } else if (index === opcaoEscolhida) {
-            btn.classList.add('wrong');
-        }
+        if (idx === correctIndex) btn.classList.add('correct');
+        if (idx === selectedIndex && selectedIndex !== correctIndex) btn.classList.add('wrong');
     });
 
-    // Exibe a explicação
-    feedbackEl.classList.remove('hidden');
-    if (opcaoEscolhida === opcaoCorreta) {
-        feedbackEl.classList.add('correct');
-        feedbackEl.innerHTML = `<strong>✨ Resposta Correta!</strong><br>${explicacao}`;
-    } else {
-        feedbackEl.classList.add('wrong');
-        feedbackEl.innerHTML = `<strong>❌ Resposta Incorreta.</strong><br>${explicacao}`;
+    const expDiv = document.getElementById('explanation');
+    expDiv.innerText = expText;
+    expDiv.classList.remove('hidden');
+
+    if (currentQuestionIndex < quizQuestions.length - 1) {
+        document.getElementById('next-q-btn').classList.remove('hidden');
     }
 }
 
-// Ouvinte do Botão
-drawBtn.addEventListener('click', sortearTema);
+document.getElementById('next-q-btn').addEventListener('click', () => {
+    currentQuestionIndex++;
+    loadQuestion();
+});
+
+// --- Lógica dos Flashcards ---
+function flipCard(card) {
+    card.classList.toggle('flipped');
+}
+
+// --- Lógica do Timer Pomodoro ---
+let timerInterval = null;
+let timeLeft = 25 * 60; // 25 Minutos
+
+function updateTimerDisplay() {
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+    document.getElementById('time-display').innerText = 
+        `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+}
+
+document.getElementById('start-btn').addEventListener('click', () => {
+    if (timerInterval) return;
+    
+    // Inicia som sintético com Tone.js no clique
+    if (window.Tone) Tone.start();
+
+    timerInterval = setInterval(() => {
+        if (timeLeft > 0) {
+            timeLeft--;
+            updateTimerDisplay();
+        } else {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            alert("Tempo de foco encerrado! Faça uma pausa.");
+            
+            // Toca um bipe de finalização se o Tone.js estiver ativo
+            if (window.Tone) {
+                const synth = new Tone.Synth().toDestination();
+                synth.triggerAttackRelease("C5", "8n");
+            }
+        }
+    }, 1000);
+});
+
+document.getElementById('pause-btn').addEventListener('click', () => {
+    clearInterval(timerInterval);
+    timerInterval = null;
+});
+
+document.getElementById('reset-btn').addEventListener('click', () => {
+    clearInterval(timerInterval);
+    timerInterval = null;
+    timeLeft = 25 * 60;
+    updateTimerDisplay();
+});
+
+// Funções Utilitárias
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+// Inicialização das funções ao carregar a página
+window.onload = function() {
+    loadQuestion();
+    updateTimerDisplay();
+};
