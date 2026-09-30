@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BiomedEstética - Portal de Estudos</title>
-    <!-- CSS Externo -->
+    <title>BiomedEstética - Portal de Estudos Rose Gold</title>
+    <!-- Estilos CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome para Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Tone.js para Efeitos Sonoros do Timer -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
 </head>
 <body>
 
@@ -31,7 +29,7 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Preparatório para Vestibular & Enade</h1>
+        <h1>Preparatório para Vestibular de BIOMEDICINA ⚕</h1>
         <p>Domine os conceitos fundamentais de Biomedicina Estética com foco em anatomia, procedimentos injetáveis, farmacologia e cosmetologia.</p>
         <button class="btn btn-primary" onclick="scrollToSection('sorter')">Sortear Tema Agora</button>
     </section>
@@ -54,19 +52,20 @@
                     <div class="topic-meta">
                         <span id="topic-tag" class="tag">--</span>
                         <span id="topic-questions" class="tag tag-outline">--</span>
+                        <a id="topic-link" href="#" target="_blank" rel="noopener noreferrer" class="tag tag-outline" style="text-decoration: underline; color: var(--gold-light);"><i class="fa-solid fa-arrow-up-right-from-square"></i> Material de Estudo</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Simulado com Questões -->
+        <!-- Simulado de Questões -->
         <section id="quiz" class="card">
             <h2><i class="fa-solid fa-graduation-cap text-accent"></i> Simulado de Vestibular</h2>
             <p>Testes práticos de fixação do conteúdo específico de Biomedicina Estética.</p>
             
             <div id="quiz-container">
                 <div class="quiz-header">
-                    <span id="quiz-progress">Questão 1 de 3</span>
+                    <span id="quiz-progress">Questão 1 de 2</span>
                 </div>
                 <div id="quiz-card" class="quiz-card">
                     <h3 id="question-text">Carregando questão...</h3>
@@ -79,7 +78,7 @@
             </div>
         </section>
 
-        <!-- Métricas e Timer Pomodoro -->
+        <!-- Cronômetro Pomodoro -->
         <section id="pomodoro" class="card">
             <h2><i class="fa-solid fa-clock text-accent"></i> Foco em Estudos (Pomodoro)</h2>
             <div class="pomodoro-grid">
@@ -105,7 +104,7 @@
         <!-- Flashcards Interativos -->
         <section id="flashcards" class="card">
             <h2><i class="fa-solid fa-layer-group text-accent"></i> Flashcards de Fixação</h2>
-            <p>Clique no card para revelar a resposta rápida e memorize conceitos essenciais.</p>
+            <p>Clique no card para revelar a resposta rápida e acesse a fonte acadêmica.</p>
             
             <div class="flashcard-container">
                 <div class="flashcard" onclick="flipCard(this)">
@@ -118,6 +117,11 @@
                         <div class="flashcard-back">
                             <h4>Resposta:</h4>
                             <p>No <strong>Plano Justaperiósteo (Camada 5)</strong> ou no Subcutâneo Profundo (Camada 4), dependendo do objetivo.</p>
+                            <p style="margin-top: 10px;">
+                                <a href="http://www.rbcp.org.br/" target="_blank" rel="noopener noreferrer" style="color: var(--gold-light); text-decoration: underline; font-size: 0.85rem;" onclick="event.stopPropagation();">
+                                    <i class="fa-solid fa-book-open"></i> Ver Artigos de Anatomia (RBCP)
+                                </a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -132,6 +136,11 @@
                         <div class="flashcard-back">
                             <h4>Resposta:</h4>
                             <p><strong>Hialuronidase</strong>, uma enzima hidrolítica que degrada o polímero de ácido hialurônico.</p>
+                            <p style="margin-top: 10px;">
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/?term=hyaluronidase+complications+hyaluronic+acid" target="_blank" rel="noopener noreferrer" style="color: var(--gold-light); text-decoration: underline; font-size: 0.85rem;" onclick="event.stopPropagation();">
+                                    <i class="fa-solid fa-book-open"></i> Pesquisa de Hialuronidase (PubMed)
+                                </a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -143,12 +152,42 @@
             <h2><i class="fa-solid fa-list-check text-accent"></i> Checklist do Edital</h2>
             <p>Marque os tópicos conforme você avança nos estudos para o vestibular.</p>
             <ul class="checklist">
-                <li><label><input type="checkbox"> Histologia e Fisiologia da Pele (Epiderme, Derme e Hipoderme)</label></li>
-                <li><label><input type="checkbox"> Anatomia Aplicada da Face e Vascularização da Artéria Facial</label></li>
-                <li><label><input type="checkbox"> Mecanismo de Ação da Toxina Botulínica Tipo A (Proteínas SNARE)</label></li>
-                <li><label><input type="checkbox"> Farmacocinética e Farmacodinâmica de Anestésicos Locais</label></li>
-                <li><label><input type="checkbox"> Bioestimuladores de Colágeno (PLLA, Hidroxiapatita de Cálcio)</label></li>
-                <li><label><input type="checkbox"> Legislação e Regulamentação do Conselho Federal de Biomedicina (CFBM)</label></li>
+                <li>
+                    <label>
+                        <input type="checkbox"> Histologia e Fisiologia da Pele (Epiderme, Derme e Hipoderme)
+                    </label>
+                    <a href="https://www.cosmeticsonline.com.br/artigo/48" target="_blank" rel="noopener noreferrer" style="color: var(--rose-gold-light); font-size: 0.85rem; margin-left: 10px;">[Estudar]</a>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox"> Anatomia Aplicada da Face e Vascularização da Artéria Facial
+                    </label>
+                    <a href="https://www.kenhub.com/en/library/anatomy/facial-artery" target="_blank" rel="noopener noreferrer" style="color: var(--rose-gold-light); font-size: 0.85rem; margin-left: 10px;">[Estudar]</a>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox"> Mecanismo de Ação da Toxina Botulínica Tipo A (Proteínas SNARE)
+                    </label>
+                    <a href="https://revistas.uceff.edu.br/reviva/article/view/351" target="_blank" rel="noopener noreferrer" style="color: var(--rose-gold-light); font-size: 0.85rem; margin-left: 10px;">[Estudar]</a>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox"> Farmacocinética e Farmacodinâmica de Anestésicos Locais
+                    </label>
+                    <a href="https://tutoriaisdeanestesia.paginas.ufsc.br/files/2013/05/Farmacologia-dos-anestesicos-locais.pdf" target="_blank" rel="noopener noreferrer" style="color: var(--rose-gold-light); font-size: 0.85rem; margin-left: 10px;">[Estudar]</a>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox"> Bioestimuladores de Colágeno (PLLA, Hidroxiapatita de Cálcio)
+                    </label>
+                    <a href="https://play.institutovelasco.com.br/p/aspectos-do-uso-de-bioestimuladores-de-colageno-na-harmonizacao-orofacial-hidroxiapatita-de-calcio-e-o-acido-poli-l-lactico" target="_blank" rel="noopener noreferrer" style="color: var(--rose-gold-light); font-size: 0.85rem; margin-left: 10px;">[Estudar]</a>
+                </li>
+                <li>
+                    <label>
+                        <input type="checkbox"> Legislação e Regulamentação do Conselho Federal de Biomedicina (CFBM)
+                    </label>
+                    <a href="https://cfbm.gov.br/category/legislacao/" target="_blank" rel="noopener noreferrer" style="color: var(--rose-gold-light); font-size: 0.85rem; margin-left: 10px;">[Estudar]</a>
+                </li>
             </ul>
         </section>
 
@@ -156,10 +195,10 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 BiomedEstética - Plataforma de Estudos Acadêmicos. Todos os direitos reservados.</p>
+        <p>&copy; 2026 BiomedEstética - Edição Rose Gold & Dourado.</p>
     </footer>
 
     <!-- JavaScript Externo -->
-    <script src="main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
